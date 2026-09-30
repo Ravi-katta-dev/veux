@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Local-manifest overlay for a VoltageOS 16.2 workspace.  Keep the 16.2
+  manifest and add only immutable device/vendor pins plus reviewed backports.
+-->
+<manifest>
+  <remote name="karan-frost" fetch="https://github.com/Karan-Frost" />
+
+  <!--
+    AOSP comparison endpoint (not an override of the VoltageOS default):
+    android-security-16.0.0_r8 ->
+    f4c1bb87279ebd557af20ad303fa889e1c50b68d.
+  -->
+
+  <project path="device/xiaomi/veux"
+           name="device_xiaomi_veux"
+           remote="karan-frost"
+           revision="4754e23e6ee6cd61236b7030df5c1e37d9b79def" />
+  <project path="vendor/xiaomi/veux"
+           name="vendor_xiaomi_veux"
+           remote="karan-frost"
+           revision="7b984fe3095d40ddf376403307a7b93c9ee04803" />
+
+  <!--
+    Deliberately absent until provenance is supplied:
+      kernel/xiaomi/sm6375
+      vendor/xiaomi/miuicamera-veux
+      vendor/oneplus/dolby
+
+    Add each only with its exact Android-16/QPR2 remote and immutable SHA.
+    Add reviewed platform backports as individual pinned revisions; do not
+    change the VoltageOS 16.2 default revision wholesale.
+  -->
+</manifest>
