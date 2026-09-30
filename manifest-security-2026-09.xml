@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Local overlay for the VoltageOS 16.2 manifest, not a default-revision rebase. -->
+<manifest>
+  <remote name="karan-frost" fetch="https://github.com/Karan-Frost" />
+  <remote name="voltage-devices" fetch="https://github.com/VoltageOS-Devices" />
+  <remote name="frost-testzone" fetch="https://github.com/frost-testzone" />
+
+  <!-- AOSP Android 16 comparison endpoint: android-security-16.0.0_r8. -->
+  <project path="device/xiaomi/veux" name="device_xiaomi_veux" remote="karan-frost" revision="4754e23e6ee6cd61236b7030df5c1e37d9b79def" />
+  <project path="kernel/xiaomi/sm6375" name="kernel_xiaomi_sm6375" remote="voltage-devices" revision="bd09efb025b4dbfe5b9fea4b441c0a4c844dfbe9" />
+  <project path="vendor/xiaomi/veux" name="vendor_xiaomi_veux" remote="karan-frost" revision="7b984fe3095d40ddf376403307a7b93c9ee04803" />
+  <project path="vendor/xiaomi/miuicamera-veux" name="vendor_xiaomi_miuicamera-veux" remote="frost-testzone" revision="9602c4fc6e08fd8600eae1e7eaa8e4b62d2ee766" />
+  <project path="vendor/oneplus/dolby" name="vendor_oneplus_dolby" remote="frost-testzone" revision="d85136316ef5c84950616d34e5076866c3daffc1" />
+
+  <!-- Reviewed Android 16 r8 source revisions; existing VoltageOS forks remain intact. -->
+  <extend-project name="platform/development" revision="refs/tags/android-security-16.0.0_r8" />
+  <extend-project name="platform/external/exfatprogs" revision="refs/tags/android-security-16.0.0_r8" />
+  <extend-project name="platform/external/freetype" revision="refs/tags/android-security-16.0.0_r8" />
+  <extend-project name="platform/external/libhevc" revision="refs/tags/android-security-16.0.0_r8" />
+  <extend-project name="platform/hardware/nxp/secure_element" revision="refs/tags/android-security-16.0.0_r8" />
+  <extend-project name="platform/packages/apps/TV" revision="refs/tags/android-security-16.0.0_r8" />
+  <extend-project name="platform/packages/modules/adb" revision="refs/tags/android-security-16.0.0_r8" />
+
+  <!-- external/libpng is a VoltageOS 16.2 fork: cherry-pick 0b9147198ed62548a59b4b427c8b5d512be31249 there; do not replace it. -->
+</manifest>
